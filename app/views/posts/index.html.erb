@@ -1,0 +1,7 @@
+<% @posts.each do |post|%>
+
+<%= link_to post.description, post_path(post.id) %>
+
+<% end%>
+
+<%= link_to "投稿する" ,new_post_path %>

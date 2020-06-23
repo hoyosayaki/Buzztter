@@ -1,0 +1,10 @@
+<%= link_to "キャンセル" , posts_path %>
+<!--<input type="button" value="下書き">-->
+
+<%= form_with model: @post do |f| %>
+
+<%= f.text_area :description %>
+
+<%= f.submit %>
+
+<% end %>
