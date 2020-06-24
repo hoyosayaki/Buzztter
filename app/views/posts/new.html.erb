@@ -5,6 +5,10 @@
 
 <%= f.text_area :description %>
 
+<%= f.fields_for :like, @post.like do |l| %>
+    <%= l.hidden_field :likes, :value => 100 %>
+<% end %>
+
 <%= f.submit %>
 
 <% end %>

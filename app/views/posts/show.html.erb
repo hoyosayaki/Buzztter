@@ -1,7 +1,9 @@
+<%= javascript_pack_tag 'post' %>
+
 <%= @post.description %>
 <%= @post.created_at %>
 <p>いいね！</p>
-<p id="iine">500</p>
+<p data-id=<%= @like.id %>><%= @like.likes %></p>
 <p>リツイート！</p>
 
 <!--<script>-->
