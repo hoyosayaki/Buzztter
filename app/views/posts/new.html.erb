@@ -3,12 +3,12 @@
 
 <%= form_with model: @post do |f| %>
 
-<%= f.text_area :description %>
+<%= f.text_area :description,placeholder: "いまどうしてる？" %>
 
 <%= f.fields_for :like, @post.like do |l| %>
     <%= l.hidden_field :likes, :value => 100 %>
 <% end %>
 
-<%= f.submit %>
+<%= f.submit "ツイート" %>
 
 <% end %>

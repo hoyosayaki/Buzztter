@@ -1,7 +1,16 @@
+<div class="index-header">
+
+</div>
+
 <% @posts.each do |post|%>
-
+<div class="tweet-content">
 <%= link_to post.description, post_path(post.id) %>
-
+    <ul>
+        <li><%= post.like.likes %></li>
+    </ul>
 <% end%>
+</div>
 
-<%= link_to "投稿する" ,new_post_path %>
+<div>
+<%= link_to "+" ,new_post_path %>
+</div>
