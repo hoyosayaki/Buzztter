@@ -5,7 +5,7 @@ $(function(){
   }
   
   $(function(){
-    setInterval(update, 10000);
+    setInterval(update, 1000);
   });
 
   function update(){

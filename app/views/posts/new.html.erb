@@ -1,9 +1,8 @@
-<%= link_to "キャンセル" , posts_path %>
-<!--<input type="button" value="下書き">-->
-
+<%= link_to "キャンセル" , user_posts_path(@user.id) %>
 <%= form_with model: @post do |f| %>
 
 <%= f.text_area :description,placeholder: "いまどうしてる？" %>
+<%= l.hidden_field :user_id, :value => @user.id %>
 
 <%= f.fields_for :like, @post.like do |l| %>
     <%= l.hidden_field :likes, :value => 100 %>
