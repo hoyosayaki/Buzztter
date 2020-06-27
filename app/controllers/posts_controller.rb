@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   
   def show
     @user=User.find_by(params[:id])
-    @post=Post.find_by(params[:id])
+    @post=Post.find_by(id: params[:id])
     @like=@post.like
       respond_to do |format| 
       format.html # html形式でアクセスがあった場合は特に何もなし

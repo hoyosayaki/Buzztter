@@ -1,11 +1,12 @@
 <%= link_to "キャンセル" , user_posts_path(@user.id) %>
-<%= form_with model: @post do |f| %>
+<%= form_with model: [@user,@post] do |f| %>
 
 <%= f.text_area :description,placeholder: "いまどうしてる？" %>
-<%= l.hidden_field :user_id, :value => @user.id %>
+<%= f.hidden_field :user_id, :value => @user.id %>
 
 <%= f.fields_for :like, @post.like do |l| %>
-    <%= l.hidden_field :likes, :value => 100 %>
+    <!--初期のいいねの数を1～300からランダムで登録する。-->
+    <%= l.hidden_field :likes, :value => rand(1..300) %>
 <% end %>
 
 <%= f.submit "ツイート" %>
