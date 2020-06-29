@@ -1,2 +1,29 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<%= javascript_pack_tag 't' %>
+
+<div class="bg-primary mb-5">
+<%= link_to "ログイン", new_user_session_path %>
+<p>Buzztterは</p>
+<p class="test">あなたのつぶやきを全力でいいね！して、リアルタイムで承認欲求を満たします</p>
+
+<p>あなたの気持ちを盛り上げよう</p>
+
+</div>
+
+<script>
+    $(function(){
+      $(".test").t()
+    });
+    
+</script>
+<script>
+  $('.test').t({
+    speed:75,          // タイピングのスピードを指定します。
+    speed_vary:false,  // 「true」にすると人間が入力しているかのように文字ごとのスピードが変わります。
+    delay:false,       // 開始時間を指定します。
+    mistype:false,     // 文字の打ち間違いをする確率を指定します。
+    caret:true,        // 「true」にするとカーソルを非表示する事ができます。
+    blink:false,       // 「true」にするとカーソルを点滅させる事ができます。
+    tag:'span',        // テキストを囲むタグを指定します。
+    repeat:false       // 何回リピートするか指定します。「true」を指定すると、無限にリピートします。
+  }); 
+</script>
